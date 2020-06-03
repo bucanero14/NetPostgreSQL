@@ -59,6 +59,8 @@ namespace NetPostgreSQL
 
             services.AddDbContext<BloggingContext>(options =>
             {
+                //This line will make the whole magic of making EFCore work with PostgreSQL
+                //This is for Demo Purposes, since it's not a good practice to hardcode a connection string
                 options.UseNpgsql(
                     @"Host=127.0.0.1;Database=blogs;Username=postgres;Password=password");
             });

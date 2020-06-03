@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace NetPostgreSQL.Migrations
 {
     [DbContext(typeof(BloggingContext))]
-    [Migration("20200602202800_Initial")]
+    [Migration("20200603215017_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,13 +33,6 @@ namespace NetPostgreSQL.Migrations
                     b.HasKey("BlogId");
 
                     b.ToTable("Blogs");
-
-                    b.HasData(
-                        new
-                        {
-                            BlogId = 1,
-                            Url = "https://atomix.vg"
-                        });
                 });
 
             modelBuilder.Entity("NetPostgreSQL.Models.Post", b =>
@@ -63,15 +56,6 @@ namespace NetPostgreSQL.Migrations
                     b.HasIndex("BlogId");
 
                     b.ToTable("Posts");
-
-                    b.HasData(
-                        new
-                        {
-                            PostId = 1,
-                            BlogId = 1,
-                            Content = "This game is awesome!",
-                            Title = "The Last Of Us Part II Review"
-                        });
                 });
 
             modelBuilder.Entity("NetPostgreSQL.Models.Post", b =>

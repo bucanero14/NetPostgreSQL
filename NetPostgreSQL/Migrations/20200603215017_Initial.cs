@@ -41,16 +41,6 @@ namespace NetPostgreSQL.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.InsertData(
-                table: "Blogs",
-                columns: new[] { "BlogId", "Url" },
-                values: new object[] { 1, "https://atomix.vg" });
-
-            migrationBuilder.InsertData(
-                table: "Posts",
-                columns: new[] { "PostId", "BlogId", "Content", "Title" },
-                values: new object[] { 1, 1, "This game is awesome!", "The Last Of Us Part II Review" });
-
             migrationBuilder.CreateIndex(
                 name: "IX_Posts_BlogId",
                 table: "Posts",
